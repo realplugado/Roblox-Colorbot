@@ -32,13 +32,13 @@ def log_error(error_message):
 try: # if the user is running the exe, find the config and time they last opened the file relative to the exe, else do it relative to the .py file.
     if getattr(sys, 'frozen', False):
         application_path = dirname(sys.executable)
-        config_file_path = join(application_path, 'config.txt')
+        config_file_path = join(application_path, 'macaco.txt')
         last_launch_path = join(application_path, 'lastlaunch.txt')
         error_log_path = join(application_path, "log.txt")
         chdir(application_path)
     else:
         script_directory = dirname(__file__)
-        config_file_path = join(script_directory, "config.txt")
+        config_file_path = join(script_directory, "macaco.txt")
         last_launch_path = join(script_directory, "lastlaunch.txt")
         error_log_path = join(script_directory, "log.txt")
         chdir(script_directory)
